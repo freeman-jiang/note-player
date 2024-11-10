@@ -1,0 +1,17 @@
+[
+  {"note": "C4", "duration": 0.2},
+  {"note": "D4", "duration": 0.2},
+  {"note": "E4", "duration": 0.2},
+  {"note": "F4", "duration": 0.2},
+  {"note": "G4", "duration": 0.2},
+  {"note": "A4", "duration": 0.2},
+  {"note": "B4", "duration": 0.2},
+  {"note": "C5", "duration": 0.2},
+  {"note": "B4", "duration": 0.2},
+  {"note": "A4", "duration": 0.2},
+  {"note": "G4", "duration": 0.2},
+  {"note": "F4", "duration": 0.2},
+  {"note": "E4", "duration": 0.2},
+  {"note": "D4", "duration": 0.2},
+  {"note": "C4", "duration": 1}
+]
