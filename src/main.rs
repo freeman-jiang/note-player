@@ -18,14 +18,34 @@ struct Note {
 impl Note {
     /// f = 2^{n/12}*440, where n is the number of semitones above or below A4
     fn frequency(self: &Self) -> f32 {
-        if self.note.len() != 2 {
-            panic!("Invalid note: {}", &self.note);
+        let note: char;
+
+        /// Octave relative to A4
+        let relative_octave: i32;
+        let mut accidental_offset: i32 = 0;
+
+        match self.note.len() {
+            2 => {
+                note = self.note.chars().nth(0).unwrap();
+                relative_octave = self.note.chars().nth(1).unwrap().to_digit(10).unwrap() as i32 - 4;
+            }
+            3 => {
+                note = self.note.chars().nth(0).unwrap();
+                let accidental = self.note.chars().nth(1).unwrap();
+                accidental_offset = match accidental {
+                    'b' => -1,
+                    '#' => 1,
+                    _ => {
+                        panic!("Invalid accidental: {}", accidental);
+                    }
+                };
+                
+                relative_octave = self.note.chars().nth(2).unwrap().to_digit(10).unwrap() as i32 - 4;
+            }
+            _ => {
+                panic!("Invalid note: {}", &self.note);
+            }
         }
-
-        let note = self.note.chars().nth(0).unwrap();
-
-        // Relative octave to A4
-        let relative_octave = self.note.chars().nth(1).unwrap().to_digit(10).unwrap() as i32 - 4;
 
         // Semitones that A4/B4/C4/etc is from A4
         let n: i32 = match note {
@@ -41,7 +61,7 @@ impl Note {
             }
         };
 
-        let semitones_from_a4 = n + relative_octave * OCTAVE_SEMITONES;
+        let semitones_from_a4 = n + relative_octave * OCTAVE_SEMITONES + accidental_offset;
 
         let freq = 2.0_f32.powf(semitones_from_a4 as f32 / 12.0) * A4_FREQ;
         return freq;
