@@ -118,6 +118,9 @@ fn main() {
     for note in notes {
         let freq = note.frequency();
         output_sink.append(SineWave::new(freq, note.duration));
+
+        // Add tiny amount of silence by using a 0 amplitude wave so that notes don't blend together
+        output_sink.append(SineWave::new(0.0, 0.005));
     }
 
     output_sink.sleep_until_end();
