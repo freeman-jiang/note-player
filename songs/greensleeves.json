@@ -1,0 +1,21 @@
+[
+  { "note": "A4", "duration": 0.5 },
+  { "note": "C5", "duration": 1 },
+  { "note": "D5", "duration": 0.5 },
+  { "note": "E5", "duration": 0.75 },
+  { "note": "F5", "duration": 0.25 },
+  { "note": "E5", "duration": 0.5 },
+  { "note": "D5", "duration": 1 },
+  { "note": "B4", "duration": 0.5 },
+  { "note": "G4", "duration": 0.75 },
+  { "note": "A4", "duration": 0.25 },
+  { "note": "B4", "duration": 0.5 },
+  { "note": "C5", "duration": 1 },
+  { "note": "A4", "duration": 0.5 },
+  { "note": "A4", "duration": 0.75 },
+  { "note": "G#4", "duration": 0.25 },
+  { "note": "A4", "duration": 0.5 },
+  { "note": "B4", "duration": 1 },
+  { "note": "G#4", "duration": 0.5 },
+  { "note": "E4", "duration": 1 }
+]
